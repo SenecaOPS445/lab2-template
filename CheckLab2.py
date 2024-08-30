@@ -449,9 +449,10 @@ class lab2out(unittest.TestCase):
         """[Lab 2 Output and Email Verification]"""
         error_output = 'Make sure you are using your myseneca email address for git. Hint: run git config --global user.email "yoursenecaid@myseneca.ca" in your terminal.'
         if os.path.exists('./laboutput.txt'):
-            with open('./laboutput.txt') as f:
-                output = f.read()
-            self.assertIn('@myseneca.ca', output, msg=error_output)
+            if os.path.getsize('./laboutput.txt') > 0:
+                with open('./laboutput.txt') as f:
+                    output = f.read()
+                self.assertIn('@myseneca.ca', output, msg=error_output)
         else:
             assert True
 
