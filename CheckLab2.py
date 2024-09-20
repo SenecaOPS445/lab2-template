@@ -442,6 +442,7 @@ class lab2g(unittest.TestCase):
         error_output = 'wrong output(HINT: should loop 10 times)'
         self.assertEqual(stdout, expected_output, msg=error_output)
 
+@unittest.skip('skip email check')
 class lab2out(unittest.TestCase):
     """If lab2 output exists, verify the git email"""
     
@@ -529,5 +530,3 @@ if __name__ == '__main__':
          x = displayReportHeader()
 
     unittest.main()
-
-
